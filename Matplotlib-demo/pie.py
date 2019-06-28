@@ -2,6 +2,8 @@
 import matplotlib.pyplot as plt
 from io import BytesIO
 from matplotlib import font_manager
+# 字体大小
+plt.rcParams['font.size'] = 30
 my_font = font_manager.FontProperties(fname="/home/inhoo/gitdir/IO-USE-Python/Matplotlib-demo/STKAITI.TTF")
 # font = {'family' : 'SimHei',
 #         'weight' : 'bold',
