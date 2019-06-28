@@ -21,16 +21,16 @@ document.add_paragraph(
 )
 import requests
 
-url = 'https://avatars2.githubusercontent.com/u/37769031?s=400&u=13d84a0f9ee9c9f2b7e08856be9cfaf51517a9b2&v=4'
+url = 'http://upload.inhoo.org/upload/image/bb445c701540be04fb3ec0b6dfd33ce7.jpg'
 pic = requests.get(url)
 from io import BytesIO
 from PIL import Image
 
 string_io = BytesIO(pic.content)
-img = Image.open(string_io)
-im_bytes = BytesIO()
-img.save(im_bytes, format='JPEG')
-document.add_picture(im_bytes, width=Inches(1.25))
+# img = Image.open(string_io)
+# im_bytes = BytesIO()
+# img.save(im_bytes, format='JPEG')
+document.add_picture(string_io, width=Inches(1.25))
 
 records = (
     (3, '101', 'Spam'),
@@ -43,6 +43,7 @@ hdr_cells = table.rows[0].cells
 hdr_cells[0].text = 'Qty'
 hdr_cells[1].text = 'Id'
 hdr_cells[2].text = 'Desc'
+table.add_column(20)
 for qty, id, desc in records:
     row_cells = table.add_row().cells
     row_cells[0].text = str(qty)
@@ -51,4 +52,4 @@ for qty, id, desc in records:
 
 document.add_page_break()
 
-document.save('demo.docx')
+document.save('demo1.docx')
