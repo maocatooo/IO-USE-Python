@@ -33,5 +33,8 @@ table.add_column(200)
 table.add_row()
 table.add_row()
 table.rows[0].cells[0].text = '1'
+# 合并单元格
+table.rows[0].cells[0].merge(table.rows[1].cells[0])
+# table.cells[0].rows[0].text = '1'
 # row.cells[0].merge(row.cells[-1])
 document.save('demo.docx')
